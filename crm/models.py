@@ -10,6 +10,9 @@ class Customer(models.Model):
     email = models.CharField(max_length=255)
     created_at = models.DateTimeField("date registered")
 
+    def __str__(self):
+        return self.name
+
 
 class Document(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
@@ -17,3 +20,6 @@ class Document(models.Model):
     path = models.CharField(max_length=255)
     mime_type = models.CharField(max_length=255)
     uploaded_at = models.DateTimeField()
+
+    def __str__(self):
+        return self.filename
