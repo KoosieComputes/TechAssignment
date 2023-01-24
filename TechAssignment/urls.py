@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from customer import views
+from crm import views
 
 urlpatterns = [
-    path('home/', views.HomeView, name='home'),
+    path('', views.HomeView, name='home'),
     path('admin/', admin.site.urls, name='admin'),
 ]

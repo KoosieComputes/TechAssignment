@@ -4,4 +4,4 @@ from django.urls import reverse
 
 
 def HomeView(request):
-    return render(request, 'customer/home.html')
+    return render(request, 'crm/home.html')
