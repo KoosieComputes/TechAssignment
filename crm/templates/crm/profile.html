@@ -1,0 +1,10 @@
+<body>
+    <h1>Profile Page</h1>
+    <p>This is your profile page. Upload documents and submit below.</p>
+    <form action="{% url 'crm:upload' %}" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit">
+    </form> 
+
+</body>
