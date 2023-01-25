@@ -4,7 +4,10 @@
     <form action="{% url 'crm:upload' %}" enctype="multipart/form-data" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit">
-    </form> 
+        <button type="submit">Upload</button>
+    </form>
+    {% if success %}
+        <p>File uploaded successfully.</p>
+    {% endif %}
 
 </body>

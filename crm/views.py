@@ -11,21 +11,17 @@ def HomeView(request):
     return render(request, 'crm/home.html')
 
 
-def SuccessView(request):
-    return render(request, 'crm/success.html')
-
-
 def ProfileView(request):
-    return render(request, 'crm/profile.html')
+    form = DocumentForm()
+    return render(request, 'crm/profile.html', {'form': form})
 
 
 def upload_file(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
-        print(form)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('crm:success'))
+            return render(request, 'crm/profile.html', {'form': form, 'success': True})
     else:
         form = DocumentForm()
     return render(request, 'crm/profile.html', {'form': form})
