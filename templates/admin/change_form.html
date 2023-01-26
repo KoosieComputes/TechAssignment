@@ -11,7 +11,8 @@
         <div>
             <textarea name="message" id="email-message" cols="100" rows="15"></textarea>
         </div>
-        <input type="submit" value="Send" name="send">
+        <input type="submit" value="Send" name="send" formaction="/send/" formmethod="post"/>
+        <input type="hidden" value="{{ original.id }}" name="customer_id"/>
     </form>
 </div>
 {% endblock %}
