@@ -6,7 +6,7 @@ This demo is a Django app which implements a Customer Relational Manager (CRM) s
 ## Setup
 In the root of the project, install the vendor dependancies:
 ``` 
-pip3 install requirements.txt
+pip3 install -r requirements.txt
 ```
 Copy the example settings and generate a secret key:
 ```
