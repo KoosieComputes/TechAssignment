@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib import admin
 from django.utils import timezone
 from django.utils.html import format_html
+from django.core.validators import FileExtensionValidator
 
 import datetime
 import hashlib
@@ -26,7 +27,8 @@ class Document(models.Model):
     type = models.CharField(max_length=255)
     mime_type = models.CharField(max_length=255)
     uploaded_at = models.DateTimeField(auto_now_add=True)
-    document = models.FileField(upload_to='documents/', default='NULL')
+    document = models.FileField(upload_to='documents/', default='NULL', validators=[
+                                FileExtensionValidator(allowed_extensions=['pdf', 'docx', 'jpg', 'png'])])
 
     def __str__(self):
         return self.type

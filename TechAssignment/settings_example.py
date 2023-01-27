@@ -22,7 +22,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-nz5_bqh+h41h@h0$oczqhuei1w@)_3%kej2rx-u8f=azdn8+zn'
+SECRET_KEY = 'Your secret key!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -129,5 +129,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Email config
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
-DEFAULT_FROM_EMAIL = 'Cobus Theunissen <rmcobus@futureforex.co.za>'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = 'Name Surname <email@futureforex.co.za>'

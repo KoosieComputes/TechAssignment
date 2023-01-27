@@ -1,13 +1,14 @@
 <body>
-    <h1>Profile Page</h1>
+    <h1>{{ customer.name }}</h1>
     <p>This is your profile page. Upload documents and submit below.</p>
     <form action="{% url 'crm:upload' %}" enctype="multipart/form-data" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Upload</button>
+        <input type="hidden" value="{{ customer.id }}" name="id">
+        <button type="submit">Submit</button>
     </form>
-    {% if success %}
-        <p>File uploaded successfully.</p>
+    {% if feedback %}
+        <p>{{ feedback }}</p>
     {% endif %}
 
 </body>
