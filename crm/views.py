@@ -25,7 +25,7 @@ def upload_file(request):
             # Parse info from document post
             document = form.save(commit=False)
             mimetype = request.FILES['document'].content_type
-            print(mimetype)
+            print(document.document)
             document.mime_type = mimetype
             document.save()
             return render(request, 'crm/profile.html', {'form': form, 'success': True})

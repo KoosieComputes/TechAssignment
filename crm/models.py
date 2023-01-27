@@ -28,17 +28,16 @@ class Document(models.Model):
     uploaded_at = models.DateTimeField(auto_now_add=True)
     document = models.FileField(upload_to='documents/', default='NULL')
 
+    def __str__(self):
+        return self.type
+
     def save(self, *args, **kwargs):
-        # TODO: Lookup mime_type from file extention
-        self.mime_type = "application/pdf"
+        self.mime_type = self.document.file.content_type
         super().save(*args, **kwargs)
 
-    def file_link(self):
+    def download_link(self):
         if self.document:
             return format_html("<a href='/download?id=%s'>download</a>" % (self.pk,))
         else:
             return "No attachment"
-    file_link.allow_tags = True
-
-    def __str__(self):
-        return self.type
+    download_link.allow_tags = True

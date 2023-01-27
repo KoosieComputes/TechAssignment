@@ -6,9 +6,10 @@ from .models import Customer, Document
 class DocumentInline(admin.TabularInline):
     extra = 0
     model = Document
-    readonly_fields = ('type', 'uploaded_at', 'document', 'file_link',)
+
+    fields = ('download_link',)
+    readonly_fields = ('type', 'uploaded_at', 'document', 'download_link',)
     exclude = ('mime_type',)
-    fields = ('file_link',)
 
 
 @admin.register(Customer)
