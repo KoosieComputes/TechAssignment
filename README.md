@@ -6,7 +6,7 @@ This demo is a Django app which implements a Customer Relational Manager (CRM) s
 ## Setup
 In the root of the project, install the vendor dependancies:
 ``` 
-pip3 install requirements.txt
+pip3 install -r requirements.txt
 ```
 In the `settings_example.py` file, set the `SECRET_KEY` and mail server settings, and rename the file to `settings.py`. The app requires a mail service, the example configuration will work with MailHog, if you choose to use that.
 Next make the database migrations, the project uses SQLite:
