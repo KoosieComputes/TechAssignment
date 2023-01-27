@@ -8,12 +8,16 @@ In the root of the project, install the vendor dependancies:
 ``` 
 pip3 install requirements.txt
 ```
-In the `settings_example.py` file, set the `SECRET_KEY` and mail server settings, and rename the file to `settings.py`. The app requires a mail service, the example configuration will work with MailHog, if you choose to use that.
+Copy the example settings and generate a secret key:
+```
+cp TechAssignment/settings_example.py TechAssignment/settings.py
+python keygen.py
+```
+In the newly created `settings.py` file, set the generated `SECRET_KEY` and mail server settings. The app requires a mail service, the example configuration will work with MailHog, if you choose to use that.
 Next make the database migrations, the project uses SQLite:
 ```
 python manage.py makemigrations
 python manage.py migrate
-
 ```
 Next create a superuser:
 ```
