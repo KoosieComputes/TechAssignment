@@ -11,7 +11,7 @@ import hashlib
 class Customer(models.Model):
     name = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
-    created_at = models.DateTimeField("date registered")
+    created_at = models.DateTimeField("date registered", auto_now_add=True)
     token = models.CharField(max_length=255, editable=False)
 
     def __str__(self):
